@@ -1,4 +1,71 @@
 .App {
   text-align: center;
+  
+}
+body{
+  background: #09357cee
+}
+.titlecolor{
+  color:rgba(235, 103, 9, 0.896);
+  font-weight: bold;
+  font-size: x-large;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+
+.text-center{
+  margin-bottom:1.5rem ;
+  margin-top:1rem ;
 }
 
+.card{
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+#content-chat{
+  height: 400px;
+  overflow-y:scroll;
+
+  
+}
+
+#content-chat::-webkit-scrollbar {
+  width: 8px; /* Ancho del scrollbar */
+}
+
+#content-chat::-webkit-scrollbar-thumb {
+  background-color: rgba(12, 12, 12, 0.471); /* Color del scrollbar */
+  border-radius: 3px; /* Bordes redondeados */
+
+}
+
+#content-chat::-webkit-scrollbar-track {
+  background-color: transparent; /* Fondo del scrollbar */
+}
+
+.form-control{
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.buttonshadow {
+  background-color: rgba(235, 103, 9, 0.896);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+}
+.buttonshadow:hover {
+  background-color: rgba(255, 179, 1, 0.896);
+
+}
+
+.card-structure{
+  padding: 0.7rem;
+  border-radius: 8px;
+  
+}
+.card-structure small:first-child{font-weight: bolder;}
+.card-msg{
+max-width: 50%;
+}
+
+.textstorage{
+  font-weight: bold;
+  
+}

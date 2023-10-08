@@ -34,10 +34,6 @@ function App() {
     };
   }, [messages]);
 
-  /*
-
-*/
-
   const nicknameSubmit = (e) => {
     e.preventDefault();
     setNickName(nickname);
@@ -71,7 +67,7 @@ function App() {
       <div className="container mt-3">
         <div className="card">
           <div className="card-body">
-            <h5 className="text-center">CHAT</h5>
+            <h5 className="text-center titlecolor">ReactChating!</h5>
 
             {/*NickName*/}
             <form onSubmit={nicknameSubmit}>
@@ -87,7 +83,7 @@ function App() {
                   disabled={disabled}
                 />
                 <button
-                  className="btn btn-success mx-3"
+                  className="btn btn-success buttonshadow mx-3"
                   type="submit"
                   id="btn-nickname"
                   disabled={disabled}
@@ -111,7 +107,7 @@ function App() {
                   value={message}
                 />
                 <button
-                  className="btn btn-success mx-3"
+                  className="btn btn-success buttonshadow  mx-3"
                   type="submit"
                   id="btn-message"
                 >
@@ -124,7 +120,7 @@ function App() {
 
         {/*Chat Message*/}
         <div className="card mt-3 mb-3" id="content-chat">
-          <div className="card-body">
+          <div className="card-body allchats">
             {messages.map((message, index) => (
               <div
                 key={index}
@@ -135,13 +131,13 @@ function App() {
                 }`}
               >
                 <div
-                  className={`card mb-3 border-1 ${
+                  className={`card card-msg mb-3 border-1 ${
                     message.from === "Me"
                       ? "bg-success bg-opacity-25"
-                      : "bg-light"
+                      : "bg-lighter"
                   }`}
                 >
-                  <div className="card-body">
+                  <div className="card-body card-structure">
                     <small>{message.from}: </small>
                     <small>{message.body}</small>
                   </div>
@@ -150,11 +146,11 @@ function App() {
             ))}
             {/*Stored Message*/}
 
-            <small className="text-center text-muted">
+            <small className="text-center textstorage text-muted">
               ... Stored Messages ...
             </small>
 
-            <div className="card-body">
+            <div className="card-body allchats">
               {storedMessages.map((message, index) => (
                 <div
                   key={index}
@@ -165,13 +161,13 @@ function App() {
                   }`}
                 >
                   <div
-                    className={`card mb-3 border-1 ${
+                    className={`card .card-msg{ mb-3 border-1 ${
                       message.from === nickname
                         ? "bg-success bg-opacity-25"
                         : "bg-light"
                     }`}
                   >
-                    <div className="card-body">
+                    <div className="card-body card-structure">
                       <small className="text-muted font-weight-bold">
                         {message.from}:{" "}
                       </small>
