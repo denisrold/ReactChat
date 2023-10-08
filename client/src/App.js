@@ -1,4 +1,9 @@
 import "./App.css";
+import io from "socket.io-client";
+import axios from "axios";
+
+//Connection
+const socket = io("http://localhost:4000");
 
 function App() {
   return (
@@ -44,12 +49,11 @@ function App() {
                 </button>
               </div>
             </form>
-
-            {/*Chat Message*/}
-            <div className="card mt-3 mb-3" id="content-chat">
-              <div className="card-body"></div>
-            </div>
           </div>
+        </div>
+        {/*Chat Message*/}
+        <div className="card mt-3 mb-3" id="content-chat">
+          <div className="card-body"></div>
         </div>
       </div>
     </div>

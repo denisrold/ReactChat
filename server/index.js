@@ -32,6 +32,18 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use("/api", router);
 
+io.on("connection", (socket) => {
+  console.log(socket.id);
+  console.log("Client connected");
+  socket.on("message", (message, nickname) => {
+    //Sending message to all clients
+    socket.broadcast.emit("message", {
+      body: message,
+      from: nickname,
+    });
+  });
+});
+
 //database conexion.
 mongoose.connect(url, { useNewUrlParser: true }).then(() => {
   console.log("Database Connected");
