@@ -7,6 +7,8 @@ import mongoose from "mongoose";
 import bodyParser from "body-parser";
 import dotenv from "dotenv";
 dotenv.config();
+import router from "./routes/message.js";
+
 //Moongose configuration:
 const url = process.env.MONGODB_URL;
 
@@ -28,6 +30,7 @@ app.use(cors());
 app.use(morgan("dev"));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use("/api", router);
 
 //database conexion.
 mongoose.connect(url, { useNewUrlParser: true }).then(() => {
