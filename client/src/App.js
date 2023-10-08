@@ -77,6 +77,7 @@ function App() {
                   className="form-control"
                   placeholder="Nickname..."
                   id="nickname"
+                  maxlength="50"
                   onChange={(e) => {
                     setNickName(e.target.value);
                   }}
@@ -101,6 +102,7 @@ function App() {
                   className="form-control"
                   placeholder="Message..."
                   id="message"
+                  maxlength="250"
                   onChange={(e) => {
                     setMessage(e.target.value);
                   }}
