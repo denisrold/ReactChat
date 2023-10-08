@@ -34,6 +34,10 @@ function App() {
     };
   }, [messages]);
 
+  /*
+
+*/
+
   const nicknameSubmit = (e) => {
     e.preventDefault();
     setNickName(nickname);
@@ -50,7 +54,7 @@ function App() {
         from: "Me",
       };
 
-      setMessages([newMessage, ...message]);
+      setMessages([newMessage, ...messages]);
       setMessage("");
       //Saving Messages
       axios.post(url + "save", {
@@ -61,6 +65,7 @@ function App() {
       alert("Enter a Nickname");
     }
   };
+
   return (
     <div className="App">
       <div className="container mt-3">
@@ -116,6 +121,7 @@ function App() {
             </form>
           </div>
         </div>
+
         {/*Chat Message*/}
         <div className="card mt-3 mb-3" id="content-chat">
           <div className="card-body">
@@ -136,9 +142,8 @@ function App() {
                   }`}
                 >
                   <div className="card-body">
-                    <small>
-                      {message.from}: {message.message}
-                    </small>
+                    <small>{message.from}: </small>
+                    <small>{message.body}</small>
                   </div>
                 </div>
               </div>
@@ -167,9 +172,10 @@ function App() {
                     }`}
                   >
                     <div className="card-body">
-                      <small className="text-muted">
-                        {message.from}: {message.message}
+                      <small className="text-muted font-weight-bold">
+                        {message.from}:{" "}
                       </small>
+                      <small className="text-muted">{message.message}</small>
                     </div>
                   </div>
                 </div>

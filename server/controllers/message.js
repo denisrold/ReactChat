@@ -24,7 +24,7 @@ const controller = {
 
   getMessage: async (req, res) => {
     try {
-      const messages = await Message.find({}).sort("_id");
+      const messages = await Message.find({}).sort("-_id");
       if (messages.length === 0) {
         return res.status(500).send({
           status: "error",
